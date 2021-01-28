@@ -1,0 +1,322 @@
+@import '_mixin-var';
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+}
+ul,
+li {
+  list-style: none;
+}
+option,
+select,
+input,
+button,
+textarea {
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background: transparent;
+}
+a {
+  color: inherit;
+  text-decoration: transparent;
+  cursor: pointer;
+  color: inherit;
+  font-size: inherit;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 18px;
+  &.lock {
+    overflow: hidden;
+  }
+}
+._img {
+  display: block;
+  font-size: 0;
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.wrapper {
+  max-width: 1950px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.form {
+  max-width: 825px;
+  margin: 0 auto;
+  padding: 30px 0; // для вида
+  // .form__fieldset
+  &__fieldset {
+    display: flex;
+    flex-direction: column;
+    border: none;
+    padding-bottom: 25px;
+  }
+  // .form__legend
+  &__legend {
+    padding-left: 20px;
+    padding-bottom: 7px;
+    font-family: $f1;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: $c1;
+    &_info {
+      position: relative;
+      &:after {
+        content: '?';
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: -10px;
+        right: -20px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        font-size: 12px;
+        color: #fff;
+        font-weight: 700;
+        background-color: #8c8c8c;
+      }
+    }
+  }
+  // .form__place
+  &__place {
+    display: flex;
+    align-items: flex-start;
+    &_center {
+      align-items: center;
+      padding-bottom: 8px;
+      &:last-child {
+        padding-bottom: 0;
+      }
+    }
+    &_space {
+			justify-content: space-between;
+			border: 1px solid #C4C4C4;
+			border-radius: 5px;
+    }
+  }
+  // .form__label
+  &__label {
+    padding-left: 10px;
+    padding-bottom: 8px;
+    font-family: $f2;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: $c1;
+    &_grey {
+      padding-left: 15px;
+      padding-bottom: 0;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 170%;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: $c2;
+    }
+    &_black {
+      padding-bottom: 0;
+      font-family: $f1;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 17px;
+      color: #173343;
+    }
+    &_upper {
+      text-transform: uppercase;
+    }
+    &_required {
+      &:after {
+        content: '*';
+      }
+    }
+  }
+  // .form__radio
+  &__radio {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 20px;
+    height: 20px;
+    visibility: hidden;
+    &:checked {
+      &::after {
+        content: '';
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #ed6b6a;
+        visibility: visible;
+      }
+      &:before {
+        border: 1px solid #8c8c8c;
+      }
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 1px solid $c1;
+      visibility: visible;
+    }
+  }
+  // .form__input
+  &__input {
+    padding: 0 20px;
+    height: 40px;
+    font-family: $f1;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    border-radius: 30px;
+    border: 1px solid #b7926a;
+    background: #ffffff;
+    &_big {
+      height: 80px;
+    }
+    &_small {
+      max-width: 230px;
+    }
+  }
+  // .form__checkbox
+  &__checkbox {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 25px;
+    width: 25px;
+    height: 25px;
+    visibility: hidden;
+    &:before {
+      content: '';
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      border: 2px solid #8c8c8c;
+      visibility: visible;
+    }
+    &:checked {
+      &:after {
+        content: '<';
+        position: absolute;
+        font-weight: bolder;
+        transform: rotate(-90deg);
+        color: $c1;
+        visibility: visible;
+      }
+    }
+  }
+  // .form__rub
+  &__rub {
+    padding-left: 14px;
+    font-family: $f2;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: $c1;
+  }
+  //.form__size
+  &__size {
+    display: flex;
+    justify-content: space-between;
+    span {
+      font-family: $f1;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 22px;
+      color: rgba(0, 0, 0, 0.45);
+    }
+  }
+  //.form__value
+  &__value {
+    font-family: $f1;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    color: #8c8c8c;
+	}
+	//.form__range
+	&__range {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		appearance: none;
+		&::-webkit-slider-thumb {
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+			background-color: #ed6b6a;
+			visibility: visible;
+			z-index: 2;
+		}
+		&::-webkit-slider-runnable-track {
+			top: 5px;
+			height: 4px;
+			width: 100%;
+			border-radius: 5px;
+			background: #C4C4C4;
+		}
+		&:before {
+		// position: absolute;
+		// content: '';
+		// width: 20px;
+		// height: 20px;
+		// border-radius: 50%;
+		// border: 1px solid $c1;
+		// top: 5px;
+		// height: 4px;
+		// width: 100%;
+		// border-radius: 5px;
+		// background: #C4C4C4;
+		}
+		&:after {
+		// 	content: '';
+		// 	position: absolute;
+		// 	width: 10px;
+		// 	height: 10px;
+		// 	border-radius: 50%;
+		// 	background-color: #ed6b6a;
+		}
+	}
+}
