@@ -414,7 +414,6 @@ body.lock {
 }
 
 .form textarea.form__input {
-  display: none;
   resize: none;
 }
 
