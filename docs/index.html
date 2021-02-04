@@ -14,93 +14,144 @@
 
 <body>
 	<div class="wrapper">
+		<div class="form">
+			<form action="#" id="form" class="form__body">
+				<!-- Получатель поддержки -->
+				<fieldset class="form__fieldset">
+					<legend class="form__legend">Выберите получателя поддержки<span class="form__info">
+							<span class="form__info-block"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis consectetur necessitatibus fugit suscipit, nisi dolore recusandae veniam nesciunt commodi modi assumenda pariatur ducimus dolorum unde debitis sunt expedita, vero maiores.</span>
+						</span>
+					</legend>
+					<div class="form__place">
+						<input class="form__radio" type="radio" name="person" id="individual">
+						<label class="form__label form__label_grey" for="individual">Lorem ipsum dolor sit amet consectetur adipisicing elit Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius, nihil?</label>
+					</div>
+					<div class="form__place">
+						<input class="form__radio" type="radio" name="person" id="entity" checked>
+						<label class="form__label form__label_grey" for="entity">Юридическое лицо</label>
+					</div>
+				</fieldset>
+				<!-- Фио, организация -->
+				<fieldset class="form__fieldset">
+					<label for="fio" class="form__label form__label_upper">ФИО</label>
+					<input type="text" class="form__input" name="fio" id="fio">
+					<label for="company" class="form__label">Организация</label>
+					<input type="text" class="form__input" name="company" id="company">
+				</fieldset>
+				<!-- Телефон, email, инн, огрн -->
+				<fieldset class="form__fieldset">
+					<label for="phone" class="form__label">Телефон:</label>
+					<input type="tel" class="form__input form__input_small" name="phone" id="phone" value="+7" maxlength="12" placeholder="+7___-___-__-__">
 
-		<form action="#" class="form">
-			<fieldset class="form__fieldset">
-				<legend class="form__legend form__legend_info">Выберите получателя поддержки</legend>
+					<label for="email" class="form__label">E-mail:</label>
+					<input type="text" class="form__input form__input_small _email" name="email" id="email">
 
-				<div class="form__place">
-					<input class="form__radio" type="radio" name="person" id="individual"></input>
-					<label class="form__label form__label_grey" for="individual">Lorem ipsum dolor sit amet consectetur adipisicing elit Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius, nihil?</label>
-				</div>
-				<div class="form__place">
-					<input class="form__radio" type="radio" name="person" id="entity"></input>
-					<label class="form__label form__label_grey" for="entity">Юридическое лицо</label>
-				</div>
-			</fieldset>
+					<label for="inn" class="form__label form__label_upper">ИНН:</label>
+					<input type="text" class="form__input form__input_small" name="inn" id="inn">
 
-			<fieldset class="form__fieldset">
-				<label for="fio" class="form__label form__label_upper">ФИО</label>
-				<input type="text" class="form__input" name="fio" id="fio">
+					<label for="ogrn" class="form__label form__label_upper form__label_required">ОГРН:</label>
+					<input type="text" class="form__input form__input_small _required" name="ogrn" id="ogrn">
 
-				<label for="company" class="form__label">Организация</label>
-				<input type="text" class="form__input" name="company" id="company">
-			</fieldset>
-
-			<fieldset class="form__fieldset">
-				<label for="phone" class="form__label">Телефон:</label>
-				<input type="tel" class="form__input form__input_small" name="phone" id="phone" value="+7" placeholder="+7___-___-__-__" pattern="\+7\s?[\(]{0,1}9[0-9]{2}[\)]">
-
-				<label for="email" class="form__label">E-mail:</label>
-				<input type="email" class="form__input form__input_small" name="email" id="email">
-
-				<label for="inn" class="form__label form__label_upper">ИНН:</label>
-				<input type="text" class="form__input form__input_small" name="inn" id="inn">
-
-				<label for="ogrn" class="form__label form__label_upper form__label_required">ОГРН:</label>
-				<input type="text" class="form__input form__input_small" name="ogrn" id="ogrn">
-			</fieldset>
-
-			<fieldset class="form__fieldset">
-				<label for="info" class="form__label">Дополнительно:</label>
-				<input type="text" class="form__input form__input_big" name="info" id="info">
-			</fieldset>
-
-			<fieldset class="form__fieldset">
-				<legend class="form__legend">Выберите условия займа:</legend>
-
-				<div class="form__place form__place_center">
-					<input type="checkbox" class="form__checkbox" name="zalog" id="zalog">
-					<label for="zalog" class="form__label form__label_black">Без залога</label>
-				</div>
-
-				<div class="form__place form__place_center">
-					<input type="checkbox" class="form__checkbox" name="strahovka" id="strahovka">
-					<label for="strahovka" class="form__label form__label_black">Без комиссий и страховок</label>
-				</div>
-
-				<div class="form__place form__place_center">
-					<input type="checkbox" class="form__checkbox" name="graphic" id="graphic">
-					<label for="graphic" class="form__label form__label_black">График платежей по выбору заемщика</label>
-				</div>
-
-				<div class="form__place form__place_center">
-					<input type="checkbox" class="form__checkbox" name="viplata" id="viplata">
-					<label for="viplata" class="form__label form__label_black">Возможность досрочного погашения</label>
-				</div>
-			</fieldset>
-
-			<fieldset class="form__fieldset">
-				<label for="zaim" class="form__label form__label_required">Укажите размер необходимого займа</label>
-				<div class="form__place form__place_center">
-					<input type="text" class="form__input form__input_small" name="zaim" id="zaim" placeholder="0">
-					<span class="form__rub">руб</span>
-				</div>
-			</fieldset>
-
-			<fieldset class="form__fieldset">
-				<div class="form__place form__place_space">
-					<label for="range" class="form__label form__label_required">Первоначальный взнос, руб</label>
-					<span class="form__value">265 000</span>
-				</div>
-				<input type="range" class="form__range" name="range" id="range" min="30000" max="500000" step="5000">
-				<div class="form__size">
-					<span>30 000</span>
-					<span>500 000</span>
-				</div>
-			</fieldset>
-		</form>
-
+				</fieldset>
+				<!-- Дополнительно -->
+				<fieldset class="form__fieldset">
+					<label for="info" class="form__label">Дополнительно:</label>
+					<textarea class="form__input form__textarea form__textarea_big" name="info" id="info"></textarea>
+				</fieldset>
+				<!-- Условия займа -->
+				<fieldset class="form__fieldset">
+					<legend class="form__legend">Выберите условия займа:</legend>
+					<div class="form__place form__place_center">
+						<input type="checkbox" class="form__checkbox" name="zalog" id="zalog">
+						<label for="zalog" class="form__label form__label_black">Без залога</label>
+					</div>
+					<div class="form__place form__place_center">
+						<input type="checkbox" class="form__checkbox" name="strahovka" id="strahovka">
+						<label for="strahovka" class="form__label form__label_black">Без комиссий и страховок</label>
+					</div>
+					<div class="form__place form__place_center">
+						<input type="checkbox" class="form__checkbox" name="graphic" id="graphic">
+						<label for="graphic" class="form__label form__label_black">График платежей по выбору заемщика</label>
+					</div>
+					<div class="form__place form__place_center">
+						<input type="checkbox" class="form__checkbox" name="viplata" id="viplata">
+						<label for="viplata" class="form__label form__label_black">Возможность досрочного погашения</label>
+					</div>
+				</fieldset>
+				<!-- Размер займа -->
+				<fieldset class="form__fieldset">
+					<label for="zaim" class="form__label form__label_required">Укажите размер необходимого займа</label>
+					<div class="form__place form__place_center">
+						<input type="text" class="form__input form__input_small form__input_zaim _required" name="zaim" id="zaim" placeholder="0" autocomplete="off">
+						<span class="form__rub">руб</span>
+					</div>
+				</fieldset>
+				<!-- Первоначальный взнос -->
+				<fieldset class="form__fieldset">
+					<div class="form__place form__place_space">
+						<label for="range" class="form__label form__label_required">Первоначальный взнос, руб</label>
+						<span class="form__value">265 000</span>
+					</div>
+					<input type="range" class="form__range" name="range" id="range" min="30000" max="500000" step="5000">
+					<div class="form__range_view"></div>
+					<div class="form__minmax">
+						<span>30 000</span>
+						<span>500 000</span>
+					</div>
+				</fieldset>
+				<!-- Согласие на обработку данных -->
+				<fieldset class="form__fieldset">
+					<div class="form__place">
+						<input type="checkbox" class="form__consent" name="consent" id="consent">
+						<label for="consent" class="form__label form__label_black">Даю согласие на получение информации о предстоящих мероприятиях</label>
+					</div>
+				</fieldset>
+				<!-- Загрузить файл -->
+				<fieldset class="form__fieldset">
+					<label for="innFile" class="form__label form__label_upper form__label_padding">ИНН<span class="form__file-box">Загрузить</span>
+					</label>
+					<div class="form__key">
+						<div class="form__file-name-size"></div>
+						<div class="form__file-clean">Удалить</div>
+					</div>
+					<div class="form__weight">Размер файла не болеее 10 Мб</div>
+					<input type="file" class="form__file" name="innFile" id="innFile">
+				</fieldset>
+				<!-- Категория получателя -->
+				<fieldset class="form__fieldset">
+					<label for="category" class="form__label form__label_required">Категория получателя:</label>
+					<textarea class="form__input" name="category" id="category"></textarea>
+					<div class="form__category form__input form__textarea _required" id="category-div">Не выбрано</div>
+					<div class="form__select">
+						<div class="form__place form__place_center form__place_border">
+							<input type="radio" class="form__select-value" id="ip" name="category">
+							<label for="ip" class="form__select-name">Индивидуальный предприниматель</label>
+						</div>
+						<div class="form__place form__place_center form__place_border">
+							<input type="radio" class="form__select-value" id="smallFactory" name="category">
+							<label for="smallFactory" class="form__select-name form__select-name_long">Малое предприятие Критерии малых предприятий в 2021 году установлены ст. 4 Федерального закона от 24.07.2007 № 209-ФЗ</label>
+						</div>
+						<div class="form__place form__place_center form__place_border">
+							<input type="radio" class="form__select-value" id="mediumFactory" name="category">
+							<label for="mediumFactory" class="form__select-name">Среднее предприятие</label>
+						</div>
+					</div>
+				</fieldset>
+				<!-- Дата заявления -->
+				<fieldset class="form__fieldset">
+					<label for="date" class="form__label">Дата заявления:</label>
+					<input type="date" class="form__date form__input form__input_small" name="date" id="date">
+				</fieldset>
+				<!-- Временно -->
+				<button type="submit">Временная кнопка проверки формы</button>
+			</form>
+			<div class="form__alert">Одно или несколько обязательных полей не заполнено. Пожалуйста, заполните их.</div>
+			<div class="form__button-container">
+				<a href="#" class="form__button form__back">Назад</a>
+				<a href="#" class="form__button form__save">Сохранить</a>
+				<a href="#" class="form__button form__next">Далее</a>
+			</div>
+		</div>
 	</div>
 	<script src="./js/script.min.js"></script>
 </body>
