@@ -389,6 +389,9 @@ body {
       color: $c1;
       border: 2px solid $c1;
     }
+		&_hidden {
+			display: none;
+		}
   }
   textarea.form__input {
     resize: none;

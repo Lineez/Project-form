@@ -413,6 +413,10 @@ body.lock {
   border: 2px solid #cf543c;
 }
 
+.form__input_hidden {
+  display: none;
+}
+
 .form textarea.form__input {
   resize: none;
 }
